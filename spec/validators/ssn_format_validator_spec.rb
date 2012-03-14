@@ -1,21 +1,11 @@
 require 'spec_helper'
 
-class BasicRecord
-  def initialize
-    @errors = {:ssn => []}
-  end
-
-  def errors
-    @errors
-  end
-end
-
 describe SsnFormatValidator do
   describe ".validate_each" do
     before(:each) do
       @options = {:attributes => {}}
       @validator = SsnFormatValidator.new(@options)
-      @record = BasicRecord.new
+      @record = BasicRecord.new(:ssn)
     end
 
     it "should validate the format for ###-##-####" do
