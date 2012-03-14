@@ -1,6 +1,6 @@
 require 'rails'
 
-require 'dynamic_fieldsets/config'
+# require 'dynamic_fieldsets/config'
 
 module FormatValidators
   class Railtie < ::Rails::Railtie
