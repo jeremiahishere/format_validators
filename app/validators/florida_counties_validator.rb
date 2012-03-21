@@ -2,9 +2,8 @@
 # example: Saint Lucie must be St. Lucie
 class FloridaCountiesValidator < ActiveModel::EachValidator
   def validate_each record, attribute, value
-    value = value.downcase.split(' ').map {|w| w.capitalize }.join(' ')
+    value = value.to_s.downcase.split(' ').map {|w| w.capitalize }.join(' ')
 
-    # this part has not been tested
     if value.include?("County")
       message = value + ' should not contain the word county.' 
       record.errors[attribute] << (options[:message] || message )
