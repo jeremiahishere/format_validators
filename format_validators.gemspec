@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "format_validators"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeremiah Hemphill"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/validators/currency_format_validator.rb",
     "app/validators/florida_counties_validator.rb",
     "app/validators/ssn_format_validator.rb",
     "format_validators.gemspec",
@@ -71,6 +72,7 @@ Gem::Specification.new do |s|
     "spec/format_validators_spec.rb",
     "spec/spec_helper.rb",
     "spec/support/basic_record.rb",
+    "spec/validators/currency_format_validator_spec.rb",
     "spec/validators/florida_counties_integration_spec.rb",
     "spec/validators/florida_counties_spec.rb",
     "spec/validators/ssn_format_validator_spec.rb"
