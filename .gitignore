@@ -1,3 +1,5 @@
+spec/dummy/log/
+
 # rcov generated
 coverage
 
