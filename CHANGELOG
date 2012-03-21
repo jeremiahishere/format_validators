@@ -1,5 +1,7 @@
 == unreleased changes
 
+* Added a currency validator
+
 == 0.0.3
 
 * Added florida counties validator
