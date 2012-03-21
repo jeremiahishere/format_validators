@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "format_validators"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeremiah Hemphill"]
-  s.date = "2012-03-14"
+  s.date = "2012-03-21"
   s.description = "Complex format validators"
   s.email = "jeremiah@cloudspace.com"
   s.extra_rdoc_files = [
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/validators/florida_counties_validator.rb",
     "app/validators/ssn_format_validator.rb",
     "format_validators.gemspec",
     "lib/format_validators.rb",
@@ -34,6 +35,7 @@ Gem::Specification.new do |s|
     "spec/dummy/Rakefile",
     "spec/dummy/app/controllers/application_controller.rb",
     "spec/dummy/app/helpers/application_helper.rb",
+    "spec/dummy/app/models/building.rb",
     "spec/dummy/app/views/layouts/application.html.erb",
     "spec/dummy/config.ru",
     "spec/dummy/config/application.rb",
@@ -50,11 +52,10 @@ Gem::Specification.new do |s|
     "spec/dummy/config/initializers/session_store.rb",
     "spec/dummy/config/locales/en.yml",
     "spec/dummy/config/routes.rb",
+    "spec/dummy/db/development.sqlite3",
+    "spec/dummy/db/migrate/20120321134932_create_buildings.rb",
+    "spec/dummy/db/schema.rb",
     "spec/dummy/db/test.sqlite3",
-    "spec/dummy/log/development.log",
-    "spec/dummy/log/production.log",
-    "spec/dummy/log/server.log",
-    "spec/dummy/log/test.log",
     "spec/dummy/public/404.html",
     "spec/dummy/public/422.html",
     "spec/dummy/public/500.html",
@@ -69,6 +70,9 @@ Gem::Specification.new do |s|
     "spec/dummy/script/rails",
     "spec/format_validators_spec.rb",
     "spec/spec_helper.rb",
+    "spec/support/basic_record.rb",
+    "spec/validators/florida_counties_integration_spec.rb",
+    "spec/validators/florida_counties_spec.rb",
     "spec/validators/ssn_format_validator_spec.rb"
   ]
   s.homepage = "http://github.com/jeremiahishere/format_validators"
