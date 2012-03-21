@@ -1,5 +1,7 @@
 == unreleased changes
 
+== 0.0.4
+
 * Added a currency validator
 
 == 0.0.3
