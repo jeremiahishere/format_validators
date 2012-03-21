@@ -1,19 +1,18 @@
-#counties use abbreviations and will not validate otherwise
-# ex: Saint Lucie must be St. Lucie
+# counties use abbreviations and will not validate otherwise
+# example: Saint Lucie must be St. Lucie
 class FloridaCountiesValidator < ActiveModel::EachValidator
   def validate_each record, attribute, value
     value = value.downcase.split(' ').map {|w| w.capitalize }.join(' ')
 
     # this part has not been tested
     if value.include?("County")
-      message = value + ' county should not contain the word county.' 
+      message = value + ' should not contain the word county.' 
       record.errors[attribute] << (options[:message] || message )
-      value.gsub("County", "").trim
+      value = value.gsub("County", "").strip
     end
 
     message = value + ' is not a county in Florida' 
     record.errors[attribute] << (options[:message] || message ) unless COUNTIES.include? value
-
   end
 
   COUNTIES = [

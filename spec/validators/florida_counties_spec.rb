@@ -33,7 +33,10 @@ describe FloridaCountiesValidator do
       @record.errors[:county].should_not_receive("<<")
       @validator.validate_each(@record, :county, "St. Lucie")
     end 
-   
-  end
 
+    it "should set a county error if the input includes the word 'county'" do
+      @record.errors[:county].should_receive("<<").with("Orange County should not contain the word county.")
+      @validator.validate_each(@record, :county, "Orange County")
+    end
+  end
 end
