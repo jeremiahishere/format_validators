@@ -12,7 +12,7 @@ A consolidation of a few of the most common validations.
 
 = Install
 
-gem install 'format_validators'
+    gem install 'format_validators'
 
 == Examples:
 
