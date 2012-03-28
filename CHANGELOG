@@ -1,5 +1,8 @@
 == unreleased changes
 
+* Added a zip code format validator and tests
+* Added a phone format validator and tests
+
 == 0.0.4
 
 * Added a currency validator
