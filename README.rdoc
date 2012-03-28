@@ -12,9 +12,34 @@ Sick and tired of re-writing the same custom validations for each project.  We h
 
 == Examples:
 
+Like All validators these lines go in the model
+
 = Currency
 
+    validates :county, :currency_format => true
+    validates <field>, :currency_format => true
+
+= Florida Counties
+
     validates :county, :florida_counties => true
+    validates <field>, :florida_counties => true
+
+= Phone Numbers
+
+    validates :county, :phone_format => true
+    validates <field>, :phone_format => true
+
+= Social Security Number
+
+    validates :county, :ssn_format => true
+    validates <field>, :ssn_format => true
+
+= ZIP code
+
+    validates :county, :zipcode_format => true
+    validates <field>, :zipcode_format => true
+
+
 
 == Contributing to format_validators
  
