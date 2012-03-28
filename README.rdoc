@@ -1,8 +1,8 @@
-= format_validators
+== format_validators
 
 A consolidation of a few of the most common validations.
 
-= What do we validate
+== What do we validate
 
 * Currency
 * Florida Counties (a little too custom but someone requested it so here it is)
@@ -10,7 +10,7 @@ A consolidation of a few of the most common validations.
 * Social Security Number
 * ZIP code
 
-= Install
+== Install
 
     gem install 'format_validators'
 
