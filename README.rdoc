@@ -1,6 +1,6 @@
 = format_validators
 
-Sick and tired of re-writing the same custom validations for each project.  We have consolidated a few of the most common validations in this gem.
+A consolidation of a few of the most common validations.
 
 = What do we validate
 
