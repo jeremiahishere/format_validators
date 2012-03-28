@@ -1,6 +1,20 @@
 = format_validators
 
-Description goes here.
+Sick and tired of re-writing the same custom validations for each project.  We have consolidated a few of the most common validations in this gem.
+
+= What do we validate
+
+* Currency
+* Florida Counties (a little too custom but someone resqueted it so here it is)
+* Phone Numbers
+* Social Security Number
+* ZIP code
+
+== Examples:
+
+= Currency
+
+    validates :county, :florida_counties => true
 
 == Contributing to format_validators
  
