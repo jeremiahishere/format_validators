@@ -18,27 +18,27 @@ A consolidation of a few of the most common validations.
 
 Like all validations these lines go in the model.
 
-= Currency
+=== Currency
 
     validates :total, :currency_format => true
     validates <field>, :currency_format => true
 
-= Florida Counties
+=== Florida Counties
 
     validates :county, :florida_counties => true
     validates <field>, :florida_counties => true
 
-= Phone Numbers
+=== Phone Numbers
 
     validates :phone_number, :phone_format => true
     validates <field>, :phone_format => true
 
-= Social Security Number
+=== Social Security Number
 
     validates :social, :ssn_format => true
     validates <field>, :ssn_format => true
 
-= ZIP code
+=== ZIP code
 
     validates :zip, :zipcode_format => true
     validates <field>, :zipcode_format => true
