@@ -1,5 +1,7 @@
 == unreleased changes
 
+== 0.0.5
+
 * Added a zip code format validator and tests
 * Added a phone format validator and tests
 * Added a days of the week validator
