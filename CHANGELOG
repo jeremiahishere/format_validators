@@ -2,6 +2,8 @@
 
 * Added a zip code format validator and tests
 * Added a phone format validator and tests
+* Added a days of the week validator
+* Added support for >= rails 3.0.7
 
 == 0.0.4
 
