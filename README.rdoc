@@ -10,9 +10,13 @@ A consolidation of a few of the most common validations.
 * Social Security Number
 * ZIP code
 
+== Bundler
+
+  gem "format_validators"
+
 == Install
 
-    gem install format_validators
+  gem install format_validators    
 
 == Examples:
 
