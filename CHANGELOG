@@ -1,5 +1,7 @@
 == unreleased changes
 
+== 0.0.6
+
 * Added devise password validator
 * Updated the currency validator with strict option
 
