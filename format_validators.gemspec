@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "format_validators"
-  s.version = "0.0.5"
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jeremiah Hemphill", "Cloudspace Team"]
+  s.authors = ["Jeremiah Hemphill"]
   s.date = "2012-04-04"
-  s.description = "Active Record format validators for inputs that require complex tests such as email and phone numbers."
+  s.description = "Complex format validators"
   s.email = "jeremiah@cloudspace.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "app/validators/currency_format_validator.rb",
     "app/validators/days_of_week_validator.rb",
+    "app/validators/devise_password_validator.rb",
     "app/validators/florida_counties_validator.rb",
     "app/validators/phone_format_validator.rb",
     "app/validators/ssn_format_validator.rb",
@@ -77,6 +78,7 @@ Gem::Specification.new do |s|
     "spec/support/basic_record.rb",
     "spec/validators/currency_format_validator_spec.rb",
     "spec/validators/days_of_week_validator_spec.rb",
+    "spec/validators/devise_password_validator_spec.rb",
     "spec/validators/florida_counties_integration_spec.rb",
     "spec/validators/florida_counties_spec.rb",
     "spec/validators/phone_format_validator_spec.rb",
