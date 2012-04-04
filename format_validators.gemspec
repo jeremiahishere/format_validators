@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "format_validators"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeremiah Hemphill"]
-  s.date = "2012-03-21"
+  s.date = "2012-04-04"
   s.description = "Complex format validators"
   s.email = "jeremiah@cloudspace.com"
   s.extra_rdoc_files = [
@@ -27,8 +27,11 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "app/validators/currency_format_validator.rb",
+    "app/validators/days_of_week_validator.rb",
     "app/validators/florida_counties_validator.rb",
+    "app/validators/phone_format_validator.rb",
     "app/validators/ssn_format_validator.rb",
+    "app/validators/zipcode_format_validator.rb",
     "format_validators.gemspec",
     "lib/format_validators.rb",
     "lib/format_validators/engine.rb",
@@ -73,9 +76,12 @@ Gem::Specification.new do |s|
     "spec/spec_helper.rb",
     "spec/support/basic_record.rb",
     "spec/validators/currency_format_validator_spec.rb",
+    "spec/validators/days_of_week_validator_spec.rb",
     "spec/validators/florida_counties_integration_spec.rb",
     "spec/validators/florida_counties_spec.rb",
-    "spec/validators/ssn_format_validator_spec.rb"
+    "spec/validators/phone_format_validator_spec.rb",
+    "spec/validators/ssn_format_validator_spec.rb",
+    "spec/validators/zipcode_format_validator_spec.rb"
   ]
   s.homepage = "http://github.com/jeremiahishere/format_validators"
   s.licenses = ["MIT"]
@@ -87,7 +93,7 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 3.0.7"])
+      s.add_runtime_dependency(%q<rails>, [">= 3.0.7"])
       s.add_development_dependency(%q<capybara>, [">= 0.4.0"])
       s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -100,7 +106,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<ZenTest>, [">= 0"])
       s.add_development_dependency(%q<autotest-rails>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["~> 3.0.7"])
+      s.add_dependency(%q<rails>, [">= 3.0.7"])
       s.add_dependency(%q<capybara>, [">= 0.4.0"])
       s.add_dependency(%q<sqlite3>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -114,7 +120,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<autotest-rails>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["~> 3.0.7"])
+    s.add_dependency(%q<rails>, [">= 3.0.7"])
     s.add_dependency(%q<capybara>, [">= 0.4.0"])
     s.add_dependency(%q<sqlite3>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
