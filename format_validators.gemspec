@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jeremiah Hemphill"]
+  s.authors = ["Jeremiah Hemphill", "Cloudspace Team"]
   s.date = "2012-04-04"
   s.description = "Complex format validators"
   s.email = "jeremiah@cloudspace.com"
