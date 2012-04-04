@@ -1,51 +1,34 @@
 require 'spec_helper'
 
 describe CurrencyFormatValidator do
-  describe ".validate_each" do
-    before(:each) do
-      @options = {:attributes => {}}
-      @validator = CurrencyFormatValidator.new(@options)
-      @record = BasicRecord.new(:cost)
-    end
+  before :each do
+    @validator = CurrencyFormatValidator.new attributes: {}
+    @mock = mock
+    @mock.stub!(:errors).and_return([])
+    @mock.errors.stub!(:[]).and_return({})
+    @mock.errors[].stub!(:<<)
+  end
+  
+  subject { @validator }
+  
+  # Correct data yields no errors!
+  context 'with perfectly valid, correctly-formatted input should produce no errors' do
+    before { @mock.should_not_receive :errors }
+    it { subject.validate_each @mock, 'date', '123.45' }
+    it { subject.validate_each @mock, 'date', '23.45' }
+    it { subject.validate_each @mock, 'date', '0.45' }
+    it { subject.validate_each @mock, 'date', '.45' }
+    it { subject.validate_each @mock, 'date', '.4' }
+    it { subject.validate_each @mock, 'date', '4' }
+  end
 
-    it "should validate the format for ###.##" do
-      @record.errors[:cost].should_not_receive("<<")
-      @validator.validate_each(@record, :cost, "123.45")
-    end
-
-    it "should validate the format for ##.##" do
-      @record.errors[:cost].should_not_receive("<<")
-      @validator.validate_each(@record, :cost, "23.45")
-    end
-
-    it "should validate the format for 0.##" do
-      @record.errors[:cost].should_not_receive("<<")
-      @validator.validate_each(@record, :cost, "0.45")
-    end
-
-    it "should validate the format for ##" do
-      @record.errors[:cost].should_not_receive("<<")
-      @validator.validate_each(@record, :cost, "45")
-    end
-
-    it "should not validate the format for #.#.#" do
-      @record.errors[:cost].should_receive("<<")
-      @validator.validate_each(@record, :cost, "4.5.6")
-    end
-
-    it "should not validate the format for string" do
-      @record.errors[:cost].should_receive("<<")
-      @validator.validate_each(@record, :cost, "word")
-    end
-
-    it "should not validate the format for #.#" do
-      @record.errors[:cost].should_receive("<<")
-      @validator.validate_each(@record, :cost, "1.2")
-    end
-
-    it "should not validate the format for .##" do
-      @record.errors[:cost].should_receive("<<")
-      @validator.validate_each(@record, :cost, ".99")
-    end
+  # Incorrect data yields errors!
+  context 'with invalid input should produce a validation error' do
+    before { @mock.errors[].should_receive :<< }
+    it { subject.validate_each @mock, 'date', '23.456' }
+    it { subject.validate_each @mock, 'date', 'two' }
+    it { subject.validate_each @mock, 'date', '23..456' }
+    it { subject.validate_each @mock, 'date', '23.45.6' }
+    it { subject.validate_each @mock, 'date', '.234' }
   end
 end
