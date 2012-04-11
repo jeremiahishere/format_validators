@@ -17,14 +17,12 @@ class FloridaCountiesValidator < ActiveModel::EachValidator
     value = value.to_s.downcase.split(' ').map {|w| w.capitalize }.join(' ')
 
     # Check the value does not contain the word county
-    # TODO: check for 'county'
     if value.include?("County")
       message = value + ' should not contain the word county.' 
       record.errors[attribute] << (options[:message] || message )
       
       # strip county to further normalize the string. This allows
       # the value to still be compared against the COUNTIES list
-      # TODO: strip 'county'
       value = value.gsub("County", "").strip
     end
 
