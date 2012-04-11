@@ -2,12 +2,11 @@
 #
 #  example usage:
 #    validates :atrribute_to_check, :days_of_week => true
-
 class DaysOfWeekValidator < ActiveModel::EachValidator
   #  Compares object's days of week attribute against days_of_week array for validity
-  #  @param [BasicRecord] record, This is the object needing validation
-  #  @param [Symbol] attribute, The attribute being validated
-  #  @param [String] value, The value of the attribute to compare aginst the days_of_week array
+  #  @param [BasicRecord] record This is the object needing validation
+  #  @param [Symbol] attribute The attribute being validated
+  #  @param [String] value The value of the attribute to compare aginst the days_of_week array
   #  @return [Boolean] True or false depending on if the value of the record's attribute is contained within the days_of_week array
   def validate_each(record, attribute, value)
     value = value.to_s.downcase
