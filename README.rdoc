@@ -5,8 +5,9 @@ A consolidation of a few of the most common validations.
 == What do we validate
 
 * Currency
+* Days of the Week
 * Florida Counties (a little too custom but someone requested it so here it is)
-* Phone Numbers
+* North American Phone Number
 * Social Security Number
 * ZIP code
 

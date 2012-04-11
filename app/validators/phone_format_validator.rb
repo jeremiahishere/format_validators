@@ -16,6 +16,9 @@ class PhoneFormatValidator < ActiveModel::EachValidator
   # checks for non digit characters in the number
   # checks against regional format validator
   # adds errors if necessary
+  # @param [ActiveRecord::Base] record The record to validate
+  # @param [Symbol] attribute The field on the record to validate
+  # @param [String] value The value of the attribute
   def validate_each record, attribute, value
     region = options[:region] || :north_america
     
@@ -27,6 +30,9 @@ class PhoneFormatValidator < ActiveModel::EachValidator
     end
   end
 
+  # Validates a phone number by region
+  #
+  # Currently only supports the north_america region
   # @param [Symbol] region The phone number region to check against
   # @param [String] formatted_value Formatted phone number, guaranteed to be all digits
   # @return [Boolean] Whether the formatted value passes region validations
@@ -38,16 +44,19 @@ class PhoneFormatValidator < ActiveModel::EachValidator
     end
   end
 
+  # @param [String] input String representation of a phone number with non digit characters removed
   # @return [Boolean] True if it is seven digits long and the first digit is not 1 or 0
   def valid_seven_digit?(input)
     input.length == 7 && input[0] != "0" && input[0] != "1"
   end
 
+  # @param [String] input String representation of a phone number with non digit characters removed
   # @return [Boolean] True if it is 10 digits long, first digit not 1 or 0 and the last 7 digits validate
   def valid_ten_digit?(input)
     input.length == 10 && input[0] != "0" && input[0] != "1" && valid_seven_digit?(input.slice(-7, 7))
   end
 
+  # @param [String] input String representation of a phone number with non digit characters removed
   # @return [Boolean] Same as the ten digit with a 1 in front
   def valid_eleven_digit?(input)
     input.length == 11 && input[0] == "1" && valid_ten_digit?(input.slice(-10, 10))

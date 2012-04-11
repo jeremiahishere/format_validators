@@ -1,5 +1,7 @@
 == unreleased changes
 
+* Updated comments for several validators
+
 == 0.0.6
 
 * Added devise password validator
