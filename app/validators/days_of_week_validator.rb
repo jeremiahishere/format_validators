@@ -1,4 +1,8 @@
 #  Checks validity of values supplied for an object's days of the week attribute
+#
+#  example usage:
+#    validates :atrribute_to_check, :days_of_week => true
+
 class DaysOfWeekValidator < ActiveModel::EachValidator
   #  Compares object's days of week attribute against days_of_week array for validity
   #  @param [BasicRecord] record, This is the object needing validation
