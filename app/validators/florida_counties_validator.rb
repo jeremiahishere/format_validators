@@ -1,15 +1,19 @@
-# counties use abbreviations and will not validate otherwise
+#
+# Counties use abbreviations and will not validate otherwise
+#
+# Note: counties with abbreviations do not account for the full name
 # example: Saint Lucie must be St. Lucie
+#
 class FloridaCountiesValidator < ActiveModel::EachValidator
 
   #
   # Checks the value parameter against a list of all Florida Counties
   # If the value contains the word county, it is considered invalid
   #
-  # @param [ActiveRecord] record; the record containing the value
+  # @param [ActiveRecord::Base] record; the record containing the value
   # @param [Symbol] attribute; the symbol used to access the value on the
   #   record
-  # @param [Object] value; The value of the attribute being validated
+  # @param [String] value; The value of the attribute being validated
   #
   def validate_each record, attribute, value
 
