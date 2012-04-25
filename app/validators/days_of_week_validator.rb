@@ -10,7 +10,7 @@ class DaysOfWeekValidator < ActiveModel::EachValidator
   #  @return [Boolean] True or false depending on if the value of the record's attribute is contained within the days_of_week array
   def validate_each(record, attribute, value)
     value = value.to_s.downcase
-    record.errors[attribute] << value + " is not a valid day of the week or abbreviation" unless self.days_of_week.include?(value)
+    record.errors[attribute] << value + " is not a valid day of the week or abbreviation" unless DaysOfWeekValidator.days_of_week.include?(value)
   end
   
   #  All available days of the week and their abbreviations to be compared against for validation
