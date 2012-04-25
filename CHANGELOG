@@ -1,5 +1,7 @@
 == unreleased changes
 
+== 0.0.8
+
 * Added a basic email format validator
 * Fixed an error in the days of week validator
 
